@@ -14,21 +14,22 @@ An open-source unblocked games website built with simplicity in mind.
 ```
 git clone https://github.com/cohenerickson/radon-games
 cd radon-games
-npm install
+npm i
 npm run start
 ```
 
-The default place for the website is `http://localhost:3000`, but this can be changed in `config.json`.
+The default place for the website is `http://localhost:3000`, but this can be changed in `config.mjs`.
 
 ## Config
-```
-{
-  "port": 3000,  // The port the website will run on.
-  "gameProxy": false, // If true, the website will proxy games to the backend server.
-  "rateLimit": {
-    "enabled": false, // If true the server will limit requests to the specified rate.
-    "maxRequests": 100, // The maximum number of requests allowed per 'timeWindow'.
-    "timeWindow": 60 // The time window in seconds.
+```js
+export default {
+  port: 3000, // The port the website will run on.
+  gameProxy: true, // If true, the website will proxy the games.
+  minify: true, // If true, the website will minify the HTML.
+  rateLimit: {
+    enabled: false, // If true the server will limit requests to the specified rate.
+    maxRequests: 100, // The maximum number of requests allowed per 'timeWindow'.
+    timeWindow: 60 // The time window in seconds.
   }
 }
 ```
