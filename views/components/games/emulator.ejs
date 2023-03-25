@@ -1,0 +1,23 @@
+<div id="game"></div>
+<script>
+  var EJS_player = "#game";
+  var EJS_gameUrl = "<%= game.source %>";
+	var EJS_core = "<%= game.gameType %>";
+  var EJS_gameName = "<%= game.title %>";
+  <% if(proxy) { %>
+    var EJS_pathtodata = "/data/";
+  <% } else { %> 
+    var EJS_pathtodata = "https://cohenerickson.github.io/radon-games-assets/data/";
+  <% } %>
+</script>
+<% if(proxy) { %>
+  <script src="/data/loader.js"></script>
+<% } else { %> 
+  <script src="https://cohenerickson.github.io/radon-games-assets/data/loader.js"></script>
+<% } %>
+<style>
+  #game canvas {
+    margin: 0 auto;
+    display: block;
+  }
+</style>

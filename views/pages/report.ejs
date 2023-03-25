@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../components/head") %>
+  </head>
+  <body>
+    <%- include("../components/nav") %>
+
+    <section class="w-full max-w-2xl m-10 px-6 py-4 mx-auto">
+      <h2 class="text-3xl font-semibold text-center text-gray-200">Bug Report</h2>
+      <span class="text-red-500"><% if(locals.error) { %><%= error %><% } %></span>
+      <span class="text-green-700"><% if(locals.message) { %><%= message %><% } %></span>
+      <form class="mt-6" method="POST" action="/report">
+
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfSAYTIV4AtdhmNkA7YpGAZgaIzgOM3U4_Ie997L-ZskxiC5g/viewform?embedded=true" width="640" height="778" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    
+    <%- include("../components/footer") %>
+  </body>
+</html>
+<script>
+  let textarea = document.getElementById("textarea");
+  textarea.innerHTML = `URL/Game: ${ decodeURIComponent((window.location.search ?? "").slice(3)) }
+Version: ${ document.getElementById("version").innerText ?? "" }
+Priority: (High/Medium/Low)
+Date: ${ (new Date().getMonth()+1) + "/" + new Date().getDate() + "/" + new Date().getFullYear() }
+
+Description:
+
+
+Steps to Reproduce:
+
+
+Expected Result:
+`
+</script>

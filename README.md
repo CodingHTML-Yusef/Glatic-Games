@@ -1,6 +1,34 @@
-# codingHTML-Yusef.github.io
+<img height="70px" src="https://raw.githubusercontent.com/cohenerickson/radon-games/main/public/img/banner.svg"></img>
 
-<h>Galatic Gaming <h>
+An open-source unblocked games website built with simplicity in mind.
 
-Glatic gaming is a new project runned by Ez#7274 who is currently a skool dev
-<img src="https://cdn.glitch.global/82c5292a-89b3-4a53-84e2-abbc0fa27724/Screenshot%202023-03-24%2012.19.50%20PM.png?v=1679674818355" alt="Glatic Gaming">
+## How to setup
+
+### Automatic Deployment:<br>
+<a href="https://glitch.com/edit/#!/import/github/cohenerickson/radon-games" title="Remix on Glitch"><img alt="Remix on Glitch" src="https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg" width="140" height="30"><img></a>&nbsp;
+<a href="https://repl.it/github/cohenerickson/radon-games" title="Run on Replit"><img alt="Run on Replit" src="https://repl.it/badge/github/cohenerickson/radon-games" width="140" height="30"><img></a>&nbsp;
+<a href="https://heroku.com/deploy?template=https://github.com/cohenerickson/radon-games" title="Deploy to Heroku"><img alt="Deploy to Heroku" src="https://www.herokucdn.com/deploy/button.svg" width="140" height="30"><img></a>
+
+
+### Command line:
+```
+git clone https://github.com/cohenerickson/radon-games
+cd radon-games
+npm install
+npm run start
+```
+
+The default place for the website is `http://localhost:3000`, but this can be changed in `config.json`.
+
+## Config
+```
+{
+  "port": 3000,  // The port the website will run on.
+  "gameProxy": false, // If true, the website will proxy games to the backend server.
+  "rateLimit": {
+    "enabled": false, // If true the server will limit requests to the specified rate.
+    "maxRequests": 100, // The maximum number of requests allowed per 'timeWindow'.
+    "timeWindow": 60 // The time window in seconds.
+  }
+}
+```
